@@ -1,0 +1,17 @@
+package projektt;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class Jdbc_example {
+	
+	public static void main (String[] args) throws ClassNotFoundException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		
+		Connection con = DriverManager.getConnection();
+	}
+
+}
