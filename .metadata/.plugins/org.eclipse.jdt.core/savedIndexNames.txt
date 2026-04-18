@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+C:\Users\damja\Downloads\PC2T\Projekt_PC2T_2026\.metadata\.plugins\org.eclipse.jdt.core
-4149868823.index
-2711231853.index
-1403464173.index
-1865797976.index

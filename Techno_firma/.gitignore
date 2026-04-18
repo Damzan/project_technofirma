@@ -1,0 +1,17 @@
+# --- Eclipse specifické ---
+.metadata/
+.settings/
+.project
+.classpath
+.recommenders/
+.loadpath
+
+# --- Výstupy kompilace ---
+bin/
+*.class
+
+
+
+# --- Ostatní šum ---
+.DS_Store
+Thumbs.db
