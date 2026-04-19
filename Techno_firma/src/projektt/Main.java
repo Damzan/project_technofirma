@@ -16,18 +16,18 @@ public class Main {
 
             try {
                 switch (volba) {
-                    case "a": pridejZamestnance(); break; // [cite: 10]
-                    case "b": pridejSpolupraci(); break;  // [cite: 11]
-                    case "c": odeberZamestnance(); break; // [cite: 12]
-                    case "d": vyhledejZamestnance(); break; // [cite: 13]
-                    case "e": spustDovednost(); break;    // [cite: 14]
-                    case "f": firma.vypisAbecedne(); break; // [cite: 15]
-                    case "g": firma.zobrazStatistiky(); break; // [cite: 16]
-                    case "h": firma.vypisPoctyVeSkupinach(); break; // [cite: 17]
-                    case "i": ulozitDoSouboru(); break;   // [cite: 18]
-                    case "j": nacistZeSouboru(); break;   // [cite: 19]
+                    case "a": pridejZamestnance(); break;
+                    case "b": pridejSpolupraci(); break; 
+                    case "c": odeberZamestnance(); break; 
+                    case "d": vyhledejZamestnance(); break; 
+                    case "e": spustDovednost(); break;    
+                    case "f": firma.vypisAbecedne(); break; 
+                    case "g": firma.zobrazStatistiky(); break; 
+                    case "h": firma.vypisPoctyVeSkupinach(); break;
+                    case "i": ulozitDoSouboru(); break;   
+                    case "j": nacistZeSouboru(); break;   
                     case "k": 
-                        firma.ulozDoSQL(); // [cite: 20]
+                        firma.ulozDoSQL(); 
                         bezi = false;
                         System.out.println("Program ukončen a data uložena do SQL.");
                         break;

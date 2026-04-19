@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.Serializable;
 
 
-public abstract class Zamestnanec implements Serializable {
+public abstract class Zamestnanec {
     
     private final int id; 
     private String jmeno;

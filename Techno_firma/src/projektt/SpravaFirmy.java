@@ -74,9 +74,15 @@ public class SpravaFirmy {
     
     public void vypisAbecedne() {
         System.out.println("\n--- Seznam zaměstnanců (dle příjmení) ---");
-        databaze.values().stream()
-                .sorted(Comparator.comparing(Zamestnanec::getPrijmeni))
-                .forEach(System.out::println);
+        List<Zamestnanec> seznam = new ArrayList<>(databaze.values());
+
+        
+        seznam.sort(Comparator.comparing(Zamestnanec::getPrijmeni));
+
+        
+        for (Zamestnanec z : seznam) {
+            System.out.println(z);
+        }
     }
 
     
@@ -87,9 +93,12 @@ public class SpravaFirmy {
         }
 
        
-        Zamestnanec top = databaze.values().stream()
-                .max(Comparator.comparingInt(z -> z.getSpolupracovnici().size()))
-                .orElse(null);
+        Zamestnanec top = null;
+        for (Zamestnanec z : databaze.values()) {
+            if (top == null || z.getSpolupracovnici().size() > top.getSpolupracovnici().size()) {
+                top = z;
+            }
+        }
 
         
         Map<Kvalita, Integer> frekvenceKvality = new HashMap<>();
@@ -99,10 +108,15 @@ public class SpravaFirmy {
             }
         }
 
-        Kvalita nejcastejsi = frekvenceKvality.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .orElse(null);
+        Kvalita nejcastejsi = null;
+        int maxVyskyt = -1;
+
+        for (Map.Entry<Kvalita, Integer> radek : frekvenceKvality.entrySet()) {
+            if (radek.getValue() > maxVyskyt) {
+                maxVyskyt = radek.getValue();
+                nejcastejsi = radek.getKey();
+            }
+        }
 
         System.out.println("Nejvíce kontaktů: " + (top != null ? top.getPrijmeni() + " (" + top.getSpolupracovnici().size() + ")" : "N/A"));
         System.out.println("Převažující úroveň spolupráce: " + (nejcastejsi != null ? nejcastejsi : "N/A"));
