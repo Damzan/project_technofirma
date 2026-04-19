@@ -3,20 +3,15 @@ package projektt;
 import java.util.*;
 import java.io.Serializable;
 
-/**
- * Abstraktní třída reprezentující zaměstnance technologické firmy[cite: 2, 25].
- * Implementuje Serializable pro možnost ukládání do souboru[cite: 18].
- */
+
 public abstract class Zamestnanec implements Serializable {
-    // Základní atributy zaměstnance [cite: 2]
+    
     private final int id; 
     private String jmeno;
     private String prijmeni;
     private int rokNarozeni;
     
-    /** * Dynamická datová struktura pro seznam spolupracovníků a úroveň spolupráce.
-     * Klíč: ID spolupracovníka, Hodnota: Kvalita (Enum)
-     */
+    
     protected Map<Integer, Kvalita> spolupracovnici = new HashMap<>();
 
     public Zamestnanec(int id, String jmeno, String prijmeni, int rokNarozeni) {
@@ -26,11 +21,9 @@ public abstract class Zamestnanec implements Serializable {
         this.rokNarozeni = rokNarozeni;
     }
 
-    /** * Abstraktní metoda pro specifické dovednosti skupin (Analytici/Specialisté)[cite: 14, 25].
-     */
+    
     public abstract void provedDovednost(Map<Integer, Zamestnanec> vsichni);
 
-    // --- METODY PRO PRÁCI S VAZBAMI ---
 
     public void pridejVazbu(int idKolegy, Kvalita k) { 
         spolupracovnici.put(idKolegy, k); 
@@ -40,7 +33,7 @@ public abstract class Zamestnanec implements Serializable {
         spolupracovnici.remove(idKolegy); 
     }
     
-    // --- VEŘEJNÉ GETTERY (Důležité pro SQL export a výpisy) ---
+    
 
     public int getId() { 
         return id; 
@@ -62,7 +55,7 @@ public abstract class Zamestnanec implements Serializable {
         return spolupracovnici; 
     }
 
-    // --- FORMÁTOVANÝ VÝPIS ---
+   
 
     @Override
     public String toString() {

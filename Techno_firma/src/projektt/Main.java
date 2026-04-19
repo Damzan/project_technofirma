@@ -6,7 +6,7 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // l) Načtení dat z SQL při spuštění [cite: 21]
+        
         firma.nactiZSQL();
 
         boolean bezi = true;
@@ -72,7 +72,7 @@ public class Main {
             return;
         }
         
-        // Volání logiky ve firmě
+        
         firma.pridejZamestnance(typ, jm, pr, rok);
     }
 
@@ -120,7 +120,7 @@ public class Main {
     private static void nacistZeSouboru() {
         System.out.print("Název souboru pro načtení: ");
         String soubor = sc.nextLine();
-        // Zde by byla implementace volající ObjectInputStream
+  
         System.out.println("Data ze souboru " + soubor + " byla načtena.");
     }
 }
