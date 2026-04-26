@@ -18,7 +18,11 @@ public class Main {
                 switch (volba) {
                     case "a": pridejZamestnance(); break;
                     case "b": pridejSpolupraci(); break; 
-                    case "c": odeberZamestnance(); break; 
+                    case "c":
+                        System.out.print("Zadejte ID k odebrání: ");
+                        int idSmazat = Integer.parseInt(sc.nextLine());
+                        firma.odeberZamestnance(idSmazat); 
+                        break; 
                     case "d": vyhledejZamestnance(); break; 
                     case "e": spustDovednost(); break;    
                     case "f": firma.vypisAbecedne(); break; 
@@ -28,9 +32,13 @@ public class Main {
                     case "j": nacistZeSouboru(); break;   
                     case "k": 
                         firma.ulozDoSQL(); 
-                        bezi = false;
                         System.out.println("Program ukončen a data uložena do SQL.");
                         break;
+                    case "q":
+                    	System.out.println("Program se ukončuje.");
+                    	bezi = false;
+                        break; 
+                    	
                     default:
                         System.out.println("Neplatná volba, zkuste to znovu.");
                 }
@@ -47,7 +55,7 @@ public class Main {
         System.out.println("c) Odebrat zaměstnance      h) Počty ve skupinách");
         System.out.println("d) Vyhledat dle ID          i) Uložit zam. do souboru");
         System.out.println("e) Spustit dovednost        j) Načíst zam. ze souboru");
-        System.out.println("k) UKONČIT A ULOŽIT DO SQL");
+        System.out.println("k) Uložit do SQL			q) Ukončit program");
         System.out.print("Vaše volba: ");
     }
 

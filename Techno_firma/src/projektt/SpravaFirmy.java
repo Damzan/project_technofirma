@@ -11,7 +11,7 @@ public class SpravaFirmy {
     
     private final String URL = "jdbc:mysql://localhost:3306/firma_db";
     private final String USER = "root";
-    private final String PASS = "tvoje_heslo";
+    private final String PASS = "";
 
     
     public void pridejZamestnance(String typ, String jmeno, String prijmeni, int rok) {
@@ -44,13 +44,26 @@ public class SpravaFirmy {
     
     public void odeberZamestnance(int id) {
         if (databaze.containsKey(id)) {
+           
             databaze.remove(id);
             for (Zamestnanec z : databaze.values()) {
                 z.odeberVazbu(id);
             }
-            System.out.println("Zaměstnanec " + id + " byl kompletně odstraněn ze seznamu zaměstanců.");
+
+            
+            try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
+               
+                String sql = "DELETE FROM zamestnanci WHERE id = ?";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, id);
+                ps.executeUpdate();
+                
+                System.out.println("Zaměstnanec smazán z paměti i z databáze.");
+            } catch (SQLException e) {
+                System.out.println("Smazání v paměti proběhlo, ale SQL selhalo: " + e.getMessage());
+            }
         } else {
-            System.out.println("Zaměstnanec s tímto ID nebyl nalezen.");
+            System.out.println("Zaměstnanec s ID " + id + " nebyl nalezen.");
         }
     }
 

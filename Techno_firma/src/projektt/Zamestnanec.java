@@ -1,7 +1,7 @@
 package projektt;
 
 import java.util.*;
-import java.io.Serializable;
+
 
 
 public abstract class Zamestnanec {
