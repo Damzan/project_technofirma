@@ -49,7 +49,7 @@ public class Main {
     }
 
     private static void tiskniMenu() {
-        System.out.println("\n========== MENU SPRÁVY FIRMY ==========");
+        System.out.println("\n========== SPRÁVA FIRMY ==========");
         System.out.println("a) Přidat zaměstnance       f) Abecední výpis");
         System.out.println("b) Přidat spolupráci        g) Statistiky firmy");
         System.out.println("c) Odebrat zaměstnance      h) Počty ve skupinách");
@@ -120,9 +120,9 @@ public class Main {
     private static void ulozitDoSouboru() {
         System.out.print("Zadejte ID zaměstnance k uložení: ");
         int id = Integer.parseInt(sc.nextLine());
-        System.out.print("Název souboru (např. data.txt): ");
-        String soubor = sc.nextLine();
-        System.out.println("Zaměstnanec " + id + " byl exportován do " + soubor);
+        SpravaFirmy.pridejRadek(id);
+
+        System.out.println("Zaměstnanec " + id + " byl úspěšně přidán do seznamu.");
     }
 
     private static void nacistZeSouboru() {

@@ -13,7 +13,8 @@ public class DatovyAnalytik extends Zamestnanec {
         Zamestnanec nejlepsiKolega = null;
 
         for (Zamestnanec jiny : vsichni.values()) {
-            if (jiny.getId() == this.getId()) continue;
+            if (jiny.getId() == this.getId()) 
+            	continue;
             
             Set<Integer> moji = new HashSet<>(this.spolupracovnici.keySet());
             moji.retainAll(jiny.getSpolupracovnici().keySet()); 

@@ -1,5 +1,7 @@
 package projektt;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.util.*;
 
@@ -37,7 +39,7 @@ public class SpravaFirmy {
             z2.pridejVazbu(id1, kvalita); 
             System.out.println("Spolupráce mezi " + id1 + " a " + id2 + " byla nastavena.");
         } else {
-            System.out.println("Chyba: Jedno nebo obě ID neexistují.");
+            System.out.println("Chyba: ID neexistuje");
         }
     }
 
@@ -214,6 +216,19 @@ public class SpravaFirmy {
             System.out.println("Data byla úspěšně zálohována do SQL.");
         } catch (SQLException e) {
             System.out.println("Chyba při ukládání do SQL: " + e.getMessage());
+        }
+    }
+    private static final String SOUBOR = "zamestnanci.txt";
+
+    public static void pridejRadek(int id) {
+        
+        try (FileWriter fw = new FileWriter(SOUBOR, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            
+            pw.println("ID: " + id);
+            
+        } catch (IOException e) {
+            System.err.println("Nepodařilo se zapsat do souboru: " + e.getMessage());
         }
     }
 
