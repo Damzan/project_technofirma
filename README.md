@@ -1,10 +1,10 @@
-<img width="1365" height="768" alt="image" src="https://github.com/user-attachments/assets/c05da198-819e-432d-bb7a-532927402f84" />
+
 
 # Správa firmy - Systém pro evidenci zaměstnanců
 
-Jedná se o jednoduchou konzolovou aplikaci v Javě určená pro správu zaměstnanců technologické firmy, jejich spolupráci a statistiky. 
-Program podporuje ukládání dat do textových souborů. 
-Projekt byl vytvořen v rámci studia předmětu Programování 2 na fakultě elektrotechniky a komunikačních technologií VUT v Brně.
+Jedná se o jednoduchou až bychom řekli primitivnější konzolovou aplikaci v programovacím jazyce Java určená pro správu zaměstnanců technologické firmy, jejich spolupráci a statistiky. 
+Program podporuje ukládání dat do textových souborů a zároveň také uživatel může ukládat do databáze SQL, kterou může upravovat a mazat. 
+Projekt byl vytvořen v rámci studia předmětu Počítače a programování 2 (BPC-PC2T) na Fakultě elektrotechniky a komunikačních technologií VUT v Brně.
 
 # Funkce
 Aplikace nabízí tyto funkce:
@@ -12,7 +12,6 @@ Aplikace nabízí tyto funkce:
 - Organizace: Správa vzájemné spolupráce zaměstnanců a jejich rozřazení.
 - Statistiky: Zobrazení statistik firmy a počtů osob ve skupinách.
 - Výpis zaměstnanců: Abecední seznam zaměstnanců pro lepší přehlednost.
-- Externí soubory: Načítání a ukládání dat z lokálních souborů.
 
 # Ukázka menu
 Po spuštění aplikace se zobrazí toto menu:
